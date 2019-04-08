@@ -18,8 +18,11 @@ from pympler import muppy
 from pysdd import cli
 
 if __name__ == "__main__":
-    c1 = time.time()
-    cli.main()
-    c2 = time.time()
-    print("Memory: " + str(sum([muppy.getsizeof(obj) for obj in muppy.get_objects()])/1024) + "kB")
-    print("Time: " + str(c2-c1))
+    for encoding in ['standard_enc1_full', 'standard_enc1_noisy', 'standard_enc2_full', 'standard_enc2_noisy']:
+        f = 'cnf/' + encoding + '_pysdd.cnf'
+        c1 = time.time()
+        cli.main(['-c', f])
+        c2 = time.time()
+        print("Encoding: " + encoding)
+        print("Memory: " + str(sum([muppy.getsizeof(obj) for obj in muppy.get_objects()])/1024) + "kB")
+        print("Time: " + str(c2-c1))

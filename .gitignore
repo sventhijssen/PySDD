@@ -16,3 +16,5 @@ dist
 pysdd/lib/sdd-2.0/*
 wm_*
 pysdd/__pycache__/
+cnf/
+out/

@@ -10,9 +10,10 @@ if __name__ == "__main__":
         plt.figure()
         for t in ['left', 'right', 'vertical', 'balanced', 'random']:
             print(t)
-            x = np.arange(10, 1000, 10)
-            y = np.arange(10, 1000, 10)
+            x = np.arange(1, 400, 10)
+            y = np.arange(1, 400, 10)
             for k in range(len(x)):
+                print(k)
                 if k != 0:
                     y[k] = hyperparameter.main(['-c', f, '-t', t, '-r', str(k)])
             plt.plot(x, y, '.', label=t)
