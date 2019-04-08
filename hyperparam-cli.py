@@ -17,4 +17,4 @@ if __name__ == "__main__":
                     y[k] = hyperparameter.main(['-c', f, '-t', t, '-r', str(k)])
             plt.plot(x, y, '.', label=t)
         plt.legend()
-        plt.savefig(encoding + '.png')
+        plt.savefig('out/' + encoding + '.png')
